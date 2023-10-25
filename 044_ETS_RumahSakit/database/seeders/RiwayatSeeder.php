@@ -12,6 +12,14 @@ class RiwayatSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\riwayat::factory(10)->create();
+
+        \App\Models\riwayat::factory()->create([
+            'NIK' => '123456',
+            'Nama_Pasien' => 'Testing',
+            'Kondisi' => 'Sakit', 
+            'Suhu' => Int::random(2).'derajat',
+            'Dokter' => '654321',
+        ]);
     }
 }
